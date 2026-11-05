@@ -4,7 +4,7 @@ Audit every video on a YouTube channel for AI search. A standalone [Claude skill
 
 Free (the API key costs nothing), and takes about 10 minutes to set up.
 
-**Why:** Google AI Overviews and AI Mode cite YouTube more than almost any other source, and they read a video through its text layer: title, description, chapters and transcript. Most channels have dozens of videos uploaded with no thought for that layer. This skill tells you what a channel already has and which videos you can improve just by editing their metadata, before you make anything new.
+**Why:** Google AI Overviews and AI Mode cite YouTube more than any other UGC source, and they read a video through its text layer: title, description, chapters and transcript. Most channels have dozens of videos uploaded with no thought for that layer. This skill tells you what a channel already has and which videos you can improve just by editing their metadata, before you make anything new.
 
 **Requirements:** a Claude that runs locally on your machine, meaning [Claude Code](https://claude.com/claude-code) (CLI, desktop app, or IDE extension) or the Claude desktop app, plus Python 3 with `openpyxl`. It won't work on claude.ai in the browser: skills there run in a cloud sandbox that doesn't have your API key.
 
@@ -122,7 +122,7 @@ The script also runs on its own (`python3 scripts/channel_audit.py --help`) if y
 
 ## What it does and doesn't do
 
-- It reviews **metadata only**: title, description, chapters, duration, hashtags, tags, caption flag and audio language. It doesn't read transcripts or watch videos, so suggested titles, first lines and chapters are always marked *verify against the video*.
+- It reviews **metadata only**: title, description, chapters, duration, hashtags, tags, caption flag and audio language. It doesn't read transcripts or watch videos, so suggested titles, first lines and chapters are always marked *verify against the video*. NOTE: If you want, you can also audit the transcripts for errors and mismatches with the open source Phyton library youtube-transcript-api.
 - "Uploaded captions: No" means no captions uploaded by the creator. The API flag doesn't count YouTube's auto-generated captions, so it doesn't mean "no transcript".
 - The rating rubric is an editorial framework, not a rule published by Google or any AI platform.
 
